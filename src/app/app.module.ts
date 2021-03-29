@@ -19,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PokemonService } from './pokemon.service';
 
 const routes: Routes = [
-  { path: '', component: PokemonListComponent },
+  { path: '', redirectTo: '/pokelist/0', pathMatch: 'full'},
+  { path: 'pokelist/NaN', redirectTo: '/pokelist/0', pathMatch: 'full'},
   { path: 'pokelist', component: PokemonListComponent },
   { path: 'pokemon/:id', component: PokemonComponent },
 ];

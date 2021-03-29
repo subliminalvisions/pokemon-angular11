@@ -8,6 +8,8 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 
 const routes: Routes = [
   // { path: '', component: PokemonListComponent },
+  { path: '', redirectTo: '/pokelist/0', pathMatch: 'full'},
+  { path: 'pokelist/NaN', redirectTo: '/pokelist/0', pathMatch: 'full'},
   { path: 'pokelist/:offset', component: PokemonListComponent },
   { path: 'pokemon/:id', component: PokemonComponent },
 ];

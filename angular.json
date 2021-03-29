@@ -125,6 +125,10 @@
               "devServerTarget": "pokemon-angular11:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
