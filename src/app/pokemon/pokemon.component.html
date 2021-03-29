@@ -1,0 +1,70 @@
+<app-layout [isFixedBottom]="true">
+    <span *ngIf="error">
+      Loading failed
+    </span>
+  
+    <div *ngIf="!isLoading && !error">
+      <div class="container content ">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-4" >
+  
+            <a class="btn gray"          
+            (click)="goToPokeList()"  >
+            <!-- routerLink="pokelist"  -->
+              <i class="fas fa-undo-alt"></i>
+              <span> {{ Region }} </span>
+            </a>
+          </div>
+  
+        </div>
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-2">
+            <ul class="pagination ">
+              <li class="page-item">
+                <a 
+                (click)="loadPrev()"  
+                class="pointer paginator hover-gray">
+                <!-- [routerLink]="['/pokemon', prevID]" -->
+                  <i class="fas fa-chevron-left"></i>
+                </a>
+              </li>
+  
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <div class="card-header px-0"> 
+              <h1 class="pokeName text-center">
+                #{{ pokemon.id }} {{ pokemon.capitalizeName() }}</h1>
+            </div>
+  
+            <div class="card flex-row flex-wrap w-100 text-center">
+              <div class="card-body">
+                <img class="card-img-top" src="{{ imgUrl }}" alt="{{pokemon.capitalizeName()}}">
+              </div>
+  
+              <div class="card-body bg-light">
+                <h5 class="card-text">About {{ pokemon.capitalizeName() }}:</h5>
+                <p>{{ pokemon.flavor_text_entries[2].flavor_text  }}
+                </p>
+              </div>
+  
+            </div>
+          </div>
+          <div class="col-md-2">
+            <ul class="pagination ">
+  
+              <li class="page-item">              
+                <a 
+                (click)="loadNext()"  
+                class="pointer paginator hover-gray">
+                  <i class="fas fa-chevron-right"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </app-layout>
+  
